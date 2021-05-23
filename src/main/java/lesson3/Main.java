@@ -19,9 +19,9 @@ public class Main {
                     System.out.println("Вы проиграли. Загаданное число: " + randomNumber);
                     break;
                 } else if (userAnswer > randomNumber) {
-                    userAnswer = scannerNumber("Загаданное число меньше.\nВы можете попытаться ещё " + i + " раз.\nВведите число:",0,9);
+                    userAnswer = scannerNumber("Загаданное число меньше.\nВы можете попытаться ещё " + i + " раз(а).\nВведите число:",0,9);
                 } else if (userAnswer < randomNumber) {
-                    userAnswer = scannerNumber("Загаданное число больше.\nВы можете попытаться ещё " + i + " раз.\nВведите число:",0,9);
+                    userAnswer = scannerNumber("Загаданное число больше.\nВы можете попытаться ещё " + i + " раз(а).\nВведите число:",0,9);
                 }
             }
             userAnswer = scannerNumber("Игра окончена. Повторить игру еще раз? 1 – да / 0 – нет.\nВыберете ответ:",0,1);
