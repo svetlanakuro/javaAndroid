@@ -7,7 +7,7 @@ public class Main {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        do {
+        while (true) {
             Random rand = new Random();
             int randomNumber = rand.nextInt(10);
             int userAnswer = scannerNumber("Угадайте число от 0 до 9.\nВведите число:",0,9);
@@ -28,12 +28,11 @@ public class Main {
             if (userAnswer == 0) {
                 break;
             }
-        } while (true);
+        }
     }
 
     public static int scannerNumber(String message, int min, int max){
         int userAnswer;
-        Scanner sc = new Scanner(System.in);
         do {
             System.out.println(message);
             userAnswer = sc.nextInt();
