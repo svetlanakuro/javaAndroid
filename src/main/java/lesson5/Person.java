@@ -38,7 +38,7 @@ public class Person {
                 "Должность: " + position + '\n' +
                 "email: " + email + '\n' +
                 "Телефон: " + telephone + '\n' +
-                "Зарплата: " + salary +
+                "Зарплата: " + salary + '\n' +
                 "Возрваст: " + age;
     }
 
