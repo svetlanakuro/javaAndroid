@@ -26,15 +26,15 @@ public class Main {
         for (Object member : members) {
             if (member instanceof Running) {
                 Running running = (Running) member;
-                for (int i = 0; i < treadmills.length; i++) {
-                    running.run(treadmills[i]);
+                for (Treadmill treadmill : treadmills) {
+                    running.run(treadmill);
                 }
             }
             System.out.println();
             if (member instanceof Jumping) {
                 Jumping jumping = (Jumping) member;
-                for (int i = 0; i < walls.length; i++) {
-                    jumping.jump(walls[i]);
+                for (Wall wall : walls) {
+                    jumping.jump(wall);
                 }
             }
             System.out.println();
