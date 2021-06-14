@@ -29,9 +29,10 @@ public class Main {
 //            convertArray(arr2);
             convertArray(arr3);
         } catch (MyArraySizeException e) {
-            System.out.println("Некорректный размер массива. Задайте массив размером 4х4.");
+            e.printStackTrace();
         } catch (MyArrayDataException e) {
-            System.out.println("Некорректные данные в массиве. Элемент с индексом: [" + e.i + "][" + e.j + "].");
+            System.out.println("Некорректные данные в массиве. Элемент в ячейке: [" + (e.i+1) + "][" + (e.j+1) + "].");
+            e.printStackTrace();
         }
 
     }
@@ -43,7 +44,7 @@ public class Main {
         int maxColumn = arr[0].length;
 
         if (maxLine != 4 || maxColumn != 4) {
-            throw new MyArraySizeException("Некорректный размер массива.");
+            throw new MyArraySizeException("Некорректный размер массива. Задайте массив размером 4х4.");
         }
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length; j++) {
