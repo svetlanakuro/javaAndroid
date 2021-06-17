@@ -31,9 +31,10 @@ public class Main {
         System.out.println();
 
         Phonebook phonebook = new Phonebook();
-        phonebook.add("Ivanov","+79876543221");
+        phonebook.add("Ivanov","+79876543210");
+        phonebook.add("Petrov","+79876543211");
         phonebook.add("Petrov","+79876543212");
-        phonebook.add("Petrov","+79876543232");
+        phonebook.add("Petrov","+79876543213");
 
         phonebook.get("Ivanov");
         phonebook.get("Petrov");
