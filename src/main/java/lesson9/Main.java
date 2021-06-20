@@ -28,34 +28,34 @@ public class Main {
             convertArray(arr1);
 //            convertArray(arr2);
             convertArray(arr3);
-        } catch (MyArraySizeException e) {
-            e.printStackTrace();
-        } catch (MyArrayDataException e) {
-            System.out.println("Некорректные данные в массиве. Элемент в ячейке: [" + (e.i+1) + "][" + (e.j+1) + "].");
+        } catch (MyArraySizeException | MyArrayDataException e) {
             e.printStackTrace();
         }
 
     }
 
     private static void convertArray(String[][] arr) throws MyArrayDataException, MyArraySizeException {
-        int convert;
-        int result = 0;
-        int maxLine = arr.length;
-        int maxColumn = arr[0].length;
-
-        if (maxLine != 4 || maxColumn != 4) {
+        if (arr.length != 4) {
             throw new MyArraySizeException("Некорректный размер массива. Задайте массив размером 4х4.");
         }
+
+        for (String[] strings : arr) {
+            if (strings.length != 4) {
+                throw new MyArraySizeException("Некорректный размер массива. Задайте массив размером 4х4.");
+            }
+        }
+
+        int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
+            for (int j = 0; j < arr[i].length; j++) {
                 try {
-                    convert = Integer.parseInt(arr[i][j]);
-                    result = result + convert;
+                    sum += Integer.parseInt(arr[i][j]);
                 } catch (NumberFormatException e) {
                     throw new MyArrayDataException(i, j);
                 }
             }
         }
-        System.out.println(result);
+
+        System.out.println(sum);
     }
 }
