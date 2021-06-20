@@ -1,8 +1,10 @@
-package lesson8;
+package lesson8.barriers;
+
+import lesson8.interfaces.Barrier;
 
 import java.util.Random;
 
-public class Treadmill {
+public class Treadmill implements Barrier {
     private int length;
 
     public Treadmill() {

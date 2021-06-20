@@ -1,8 +1,10 @@
-package lesson8;
+package lesson8.barriers;
+
+import lesson8.interfaces.Barrier;
 
 import java.util.Random;
 
-public class Wall {
+public class Wall implements Barrier {
     private double height;
 
     public Wall() {
