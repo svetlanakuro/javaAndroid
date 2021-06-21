@@ -32,6 +32,7 @@ public class Main {
         Box<Apple> appleBox2 = new Box<>();
         Box<Orange> orangeBox = new Box<>();
 
+        // добавление и удаление фруктов в коробки
         appleBox.add(apple);
         appleBox.add(new Apple());
         appleBox.add(new Apple());
