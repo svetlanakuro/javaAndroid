@@ -3,21 +3,22 @@ package lesson10;
 import java.util.*;
 
 public class Phonebook {
-    private HashMap <String, List<String>> book = new HashMap<>();
+    private final HashMap <String, Set<String>> book = new HashMap<>();
 
     public void add(String surname, String telephone) {
-        if (book.keySet().contains(surname)) {
-            List<String> phone = book.get(surname);
-            for (String p : phone) {
-                book.put(surname, Arrays.asList(p, telephone));
-            }
+        Set<String> phones;
+        if (book.containsKey(surname)) {
+            phones = book.get(surname);
+            phones.add(telephone);
         } else {
-            book.put(surname, Collections.singletonList(telephone));
+            phones = new HashSet<>();
+            phones.add(telephone);
+            book.put(surname, phones);
         }
     }
 
     public void get(String surname) {
-        List<String> phone = book.get(surname);
-        System.out.println(phone);
+        Set<String> phones = book.get(surname);
+        System.out.println("Все номера пользователя " + surname + " : " + phones);
     }
 }

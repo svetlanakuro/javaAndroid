@@ -1,5 +1,6 @@
 package lesson10;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -10,23 +11,22 @@ public class Main {
                 "grapefruit","grape","lemon","cherry","apple",
                 "persimmon","pomegranate","gooseberry","watermelon","lemon"};
 
-        HashSet<String> wordsSet = new HashSet<>();
-        for (String word : wordsArray) {
-            wordsSet.add(word);
-        }
-        for (String words : wordsSet) {
-            System.out.println(words + " ");
-        }
-        System.out.println();
+        HashSet<String> wordsSet = new HashSet<>(Arrays.asList(wordsArray));
+//        for (String word : wordsArray) {
+//            wordsSet.add(word);
+//        }
+
+        System.out.println(wordsSet);
 
         HashMap<String, Integer> wordsMap = new HashMap<>();
         for (String words : wordsArray) {
-            if (wordsMap.keySet().contains(words)) {
+            if (wordsMap.containsKey(words)) {
                 wordsMap.put(words, wordsMap.get(words) + 1);
             } else {
                 wordsMap.put(words, 1);
             }
         }
+        System.out.println(wordsMap.keySet());
         System.out.println(wordsMap);
         System.out.println();
 
@@ -35,6 +35,7 @@ public class Main {
         phonebook.add("Petrov","+79876543211");
         phonebook.add("Petrov","+79876543212");
         phonebook.add("Petrov","+79876543213");
+        phonebook.add("Ivanov","+79876543214");
 
         phonebook.get("Ivanov");
         phonebook.get("Petrov");
