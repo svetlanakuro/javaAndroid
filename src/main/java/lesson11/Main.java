@@ -41,6 +41,7 @@ public class Main {
         orangeBox.add(new Orange());
         orangeBox.add(new Orange());
 
+        // информация о коробках
         appleBox.info();
         appleBox2.info();
         orangeBox.info();
