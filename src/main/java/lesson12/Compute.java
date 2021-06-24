@@ -1,5 +1,7 @@
 package lesson12;
 
+import java.util.Arrays;
+
 public class Compute {
     static final int SIZE = 10_000_000;
     static final int HALF = SIZE / 2;
@@ -15,6 +17,7 @@ public class Compute {
         }
         System.currentTimeMillis();
         System.out.println(System.currentTimeMillis() - a);
+//        System.out.println(Arrays.toString(arr));
     }
 
     void compute2() {
@@ -35,5 +38,6 @@ public class Compute {
         System.arraycopy(a2, 0, arr, HALF, HALF);
         System.currentTimeMillis();
         System.out.println(System.currentTimeMillis() - a);
+//        System.out.println(Arrays.toString(arr));
     }
 }
