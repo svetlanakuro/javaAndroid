@@ -57,9 +57,9 @@ public class Car implements Runnable {
         try {
             lock.lock();
             if (!hasViner.getAndSet(true)) {
-                System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> участник " + this.name + " победитель! Он занимает " + place + " место.");
+                System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> " + this.name + " победитель! Он занимает " + place + " место.");
             } else {
-                System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> участник " + this.name + " занимает " + place + " место.");
+                System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> " + this.name + " занимает " + place + " место.");
             }
             place++;
         } finally {
