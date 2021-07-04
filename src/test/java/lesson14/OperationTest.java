@@ -3,8 +3,6 @@ package lesson14;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import java.util.Arrays;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 public class OperationTest {
 
@@ -19,14 +17,11 @@ public class OperationTest {
         Assertions.assertEquals("[]", Arrays.toString(operation.changeArray(arr2)));
     }
 
-    @Test
-    public void exceptionTesting() {
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> { throw new IllegalArgumentException("В массиве отсутствует число = 4."); }
-        );
-
-        assertEquals("В массиве отсутствует число = 4.", exception.getMessage());
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testIndexOutOfBoundsException() {
+        Operation operation = new Operation();
+        int[] arr1 = {0, 1, 2, 3, 0, 5, 6, 7, 8, 9};
+        operation.checkArray(arr1);
     }
 
     @Test
